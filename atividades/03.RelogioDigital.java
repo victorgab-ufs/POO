@@ -35,7 +35,7 @@ public class RelogioDigital {
         else if (minuto < 10) {
             return hora+":"+"0"+minuto;
         }
-        // nenhum tendo essa condicao, hora e minuto eh apresentado da forma que esta no atributo
+        // nenhum tendo essa condicao, hora e minuto sao apresentado da forma que esta no atributo
         else return hora+":"+minuto;
     }
     
