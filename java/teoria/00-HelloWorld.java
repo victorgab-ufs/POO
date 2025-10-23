@@ -13,7 +13,7 @@ public class App {
         System.out.println("Olá " + nome);
         // cria novo objeto scannerInt da classe Scanner que recebe argumento
         Scanner scannerInt = new Scanner(System.in);
-        // le a proxima linha, transformando o valor em inteiro e atribuindo ele a numero
+        // le o proximo inteiro e atribui ele a 'numero'
         int numero = scannerInt.nextInt();
         System.out.println("numero: " + numero);
 
