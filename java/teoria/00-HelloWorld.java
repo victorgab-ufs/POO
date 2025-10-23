@@ -1,13 +1,14 @@
-import java.util.Scanner; // package -> classe Scanner da classe util (leitura no terminal)
+import java.util.Scanner; // package -> classe Scanner do pacote java.util (leitura de dados do teclado)
 
 public class App {
-    // metodo main ->      |recebe palavras na execucao apos o nome no terminal|
+    // metodo main -> ponto de entrada do programa -> String[] args |recebe argumentos passados na linha de comando (terminal)|
     public static void main(String[] args) throws Exception {
-        // cria novo objeto Scanner que recebe um valor do sistema 
+        // cria novo objeto Scanner que recebe um valor do teclado
         Scanner scanner = new Scanner(System.in);
         // System.out.println -> imprime o argumento passado na tela
         System.out.println("Digite seu nome");
-        //  le a proxima linha e guarda texto em nome
+        //  le a proxima palavra digitada (ate o proximo espaco) e guarda em 'nome'
+        // .nextLine() -> le a linha inteira
         String nome = scanner.next();
         System.out.println("Olá " + nome);
         // cria novo objeto scannerInt da classe Scanner que recebe argumento
