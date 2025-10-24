@@ -51,26 +51,35 @@ public class Bola {
             velocidadey = -velocidadey;
         }
     }
-    
+    // metodo que tem como parametros as poiscoes horizontal e vertical da bola e a posicao (vertical) da raquete (imaginemos que podem ser obtidas atraves da game engine) 
     private void colisaoRaquetes(double xAtual, double yAtual, double posicaoRaquete){
+        // se a posicao horizontal da bola for maior que 100 (extremo a direita) ou menor que 0 (extremo a esquerda)...
+        // e nesse momento a altura da bola coincidir com a altura da raquete (levando em consideracao o tamanho da raquete)...
         if ((xAtual >= 100 || xAtual <= 0) && (yAtual <= posicaoRaquete+10 || yAtual >= posicaoRaquete-10)){
+            // havendo a colisao, a velocidade horizontal se torna seu oposto
             velocidadex = -velocidadex;
         }
     }
-    
+    // metodo que tem como parametro a posicao horizontal da bola e verifica se algum dos jogadores pontuou
     private void pontuacao(double xPontuacao){
+        // se a posicao da bola passar de 100 isso indica que passou do limite a direita (jogador 1/esquerda pontuou)
         if (xPontuacao > 100){
-            System.out.println("Jogador 2 pontuou");
+            // mensagem que indica pontuacao
+            System.out.println("Jogador 1 pontuou");
+            // metodo estagioInicial eh chamado
             estagioInicial();
         }
-        
+        // se a posicao da bola passar de 0 isso indica que passou do limite a esquerda (jogador 2/direita pontuou)
         if (xPontuacao < 0){
-            System.out.print("Jogador 1 pontuou");
+            // mensagem que indica pontuacao
+            System.out.print("Jogador 2 pontuou");
+            // metodo estagio inicial eh chamado
             estagioInicial();
         }
     }
-    
+    // metodo sem valor de retorno que nao tem parametro
     private void estagioInicial(){
+        // todos os valores sao redefinados para os valores no momento de inicializacao dos atributos
         tempo = 0;
         velocidadex = 50;
         velocidadey = 0;
